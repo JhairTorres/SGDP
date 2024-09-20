@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Información de Usuarios</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Información de Usuarios</h1>
+
+    <h2>Agregar/Editar Usuario</h2>
+    <form id="userForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" required><br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" required><br><br>
+
+        <label for="celular">Celular:</label>
+        <input type="text" id="celular" required><br><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label for="ciudad">Ciudad:</label>
+        <select id="ciudad" required>
+            <option value="">Selecciona una Ciudad</option>
+            <option value="medellin">Medellin</option>
+            <option value="bogota">Bogota</option>
+            <option value="manizales">Manizales</option>
+            <option value="pereira">Pereira</option>
+            <option value="mocoa">Mocoa</option>
+        </select><br><br>
+
+        <label for="departamento">Departamento:</label>
+        <select id="departamento" required>
+            <option value="">Selecciona un Departamento</option>
+            <option value="antioqia">Antioquia</option>
+            <option value="cundinamarca">Cundinamarca</option>
+            <option value="caldas">Caldas</option>
+            <option value="risaralda">Risaralda</option>
+            <option value="putumayo">Putumayo</option>
+        </select><br><br>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" required><br><br>
+
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" required><br><br>
+
+        <button type="button" onclick="addOrUpdateUser()">Guardar Usuario</button>
+    </form>
+
+    <h2>Buscar Usuario</h2>
+    <label for="searchCedula">Buscar por Cédula:</label>
+    <input type="text" id="searchCedula">
+    <button type="button" onclick="searchUserByCedula()">Buscar</button><br><br>
+
+    <label for="searchName">Buscar por Nombre:</label>
+    <input type="text" id="searchName">
+    <button type="button" onclick="searchUserByName()">Buscar</button><br><br>
+
+    <h2>Filtrar Usuarios</h2>
+    <label for="filterCiudad">Filtrar por Ciudad:</label>
+    <select id="filterCiudad">
+        <option value="">Filtrar por Ciudad</option>
+        <option value="medellin">Medellin</option>
+        <option value="bogota">Bogota</option>
+        <option value="manizales">Manizales</option>
+        <option value="pereira">Pereira</option>
+        <option value="mocoa">Mocoa</option>
+    </select>
+
+    <label for="filterDepartamento">Filtrar por Departamento:</label>
+    <select id="filterDepartamento">
+        <option value="">Filtrar Departamento</option>
+        <option value="antioqia">Antioquia</option>
+        <option value="cundinamarca">Cundinamarca</option>
+        <option value="caldas">Caldas</option>
+        <option value="risaralda">Risaralda</option>
+        <option value="putumayo">Putumayo</option>
+    </select>
+    <button type="button" onclick="filterUsers()">Filtrar</button>
+
+    <h2>Lista de Usuarios</h2>
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cédula</th>
+                <th>Edad</th>
+                <th>Celular</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Ciudad</th>
+                <th>Departamento</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Foto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="userTable">
+            <!-- Los usuarios se mostrarán aquí -->
+        </tbody>
+    </table>
+
+    <script src="E:\programacion4\SGDPCHAT.js"></script>
+</body>
+</html>
